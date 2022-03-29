@@ -1,0 +1,54 @@
+::before, ::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+.pulse-anim{
+    /*Faire un cercle*/
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    
+    background:#000;
+    margin:100px auto 0;
+    box-shadow:0 0 0 0 #000;
+    
+    /*Animation*/
+    animation:pulse 1.3s infinite;
+}
+@keyframes pulse{
+    to{
+        box-shadow:0 0 0 18px rgba(0,0,0,0.01);
+    }
+}
+.nope-anim{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background:skyblue;
+    margin:100px auto 0;
+    cursor:pointer;
+}
+.nope-anim:hover{
+    animation: nope 0.4s forwards /*Pour revenir aux valeurs initiales*/;
+}
+@keyframes nope{
+    0%{
+        transform: translateX(0px);
+    }
+    20%{
+        transform: translateX(-10px);
+    }
+    40%{
+        transform: translateX(10px);
+    }
+    60%{
+        transform: translateX(-10px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
